@@ -1,0 +1,28 @@
+{
+    "name": "",
+    "version": "1.0.0",
+    "description": "",
+    "main": "a.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "babel-eslint": "^8.2.1",
+        "eslint": "^4.15.0",
+        "eslint-config-google": "^0.9.1"
+    },
+    "dependencies": {
+        "aglio": "^2.3.0",
+        "body-parser": "^1.18.2",
+        "cookie-parser": "^1.4.3",
+        "cors": "^2.8.4",
+        "express": "^4.16.2",
+        "mongodb": "^3.0.1",
+        "node-sass": "^4.7.2",
+        "web3": "^0.20.4",
+        "web3-auth": "^1.1.0"
+    }
+}
