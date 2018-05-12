@@ -1,22 +1,34 @@
 /* globals __dirname */
 
-const fs = require('fs');
 const path = require('path');
+const fs = require('fs');
 
-const getControllers = (data) => {
-    const controllersObject = {};
+const attachControllers =
+    (dataToAttach, utilsToAttach, folderPath, controllersObject) => {
+        fs.readdirSync(folderPath)
+            .filter((f) => f.includes('.controller'))
+            .forEach((fileName) => {
+                const modulePath = path.join(folderPath, fileName);
+                const currentController = require(modulePath);
 
-    fs.readdirSync(path.join(__dirname, './api.controllers'))
-        .filter((fileName) => fileName.includes('.controller'))
-        .forEach((controllerFile) => {
-            const modulePath =
-                path.join(__dirname, `./api.controllers/${controllerFile}`);
+                controllersObject[currentController.name] = currentController(
+                    dataToAttach, utilsToAttach);
+            });
 
-            const currentController = require(modulePath);
-            controllersObject[currentController.name] = currentController(data);
-        });
+        return controllersObject;
+    };
 
-    return controllersObject;
+const getControllers = (data, utils) => {
+    console.log('here!');
+    const controllers = {};
+    const apiControllersPath = path.join(__dirname);
+
+    const paths = [apiControllersPath];
+    paths.forEach((p) => {
+        attachControllers(data, utils, p, controllers);
+    });
+
+    return controllers;
 };
 
 module.exports = getControllers;

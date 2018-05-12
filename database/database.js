@@ -1,13 +1,7 @@
-const { MongoClient, ObjectID } = require('mongodb');
+const { MongoClient } = require('mongodb');
 
-const init = (dbConnectionString, dbName) => {
-    return MongoClient
-        .connect(dbConnectionString)
-        .then((dbClient) => {
-            const db = dbClient.db(dbName);
-            db.getId = (id) => new ObjectID(id);
-            return db;
-        });
+const init = (connectionString) => {
+    return MongoClient.connect(connectionString);
 };
 
 module.exports = init;

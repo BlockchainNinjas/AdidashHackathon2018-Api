@@ -1,28 +1,60 @@
-const ACCOUNT_ADDRESS_LENGTH = 42;
+const CryptoJS = require('crypto-js');
 
 class User {
-    static validateModel(userToValidate) {
-        const areAllPropsPresent = typeof userToValidate !== 'undefined' &&
-            typeof userToValidate.account === 'string' &&
-            typeof userToValidate.nickname === 'string' &&
-            typeof userToValidate.email === 'string';
+    static validateModel(user) {
+        const isUserValid =
+            typeof user !== 'undefined' &&
+            typeof user.username === 'string' &&
+            typeof user.password === 'string' &&
+            typeof user.firstName == 'string' &&
+            user.username.match(/^\w{3,20}$/g) &&
+            user.username.match(/^\w{3,20}$/g) &&
+            user.password.match(/^\w{4,20}$/g);
 
-        if (!areAllPropsPresent) {
-            throw new Error('User must have address, nickname and email');
+        if (!isUserValid) {
+            return Promise.reject('Incorrect username or password characters!');
         }
 
-        if (userToValidate.account.length !== ACCOUNT_ADDRESS_LENGTH) {
-            throw new Error(
-                `Account address must have length ${ACCOUNT_ADDRESS_LENGTH}`);
+        user.password = CryptoJS.SHA1(user.password).toString();
+        return Promise.resolve(user);
+    }
+
+    static validateUserInfo(user) {
+        // console.log(user);
+        const isUserValid =
+            typeof user !== 'undefined' &&
+            typeof user.username === 'string' &&
+            typeof user.password === 'string' &&
+            user.username.match(/^\w{3,20}$/g) &&
+            user.password.match(/^\w{4,20}$/g);
+
+        if (!isUserValid) {
+            return Promise.reject('Incorrect username or password characters!');
         }
 
-        if (!userToValidate.email.match(/^[^@\s]+@[^@\s]+\.[^@\s]+$/g)) {
-            throw new Error(
-                `${userToValidate.email} is not a valid email!`
-            );
+        return Promise.resolve(user);
+    }
+
+    static validateUserCredentials(user, dbUser) {
+        const userPassHash = CryptoJS.SHA1(user.password).toString();
+        if (userPassHash == dbUser.password) {
+            return Promise.resolve(dbUser);
+        } else {
+            return Promise.reject('Invalid credentials!');
+        }
+    }
+
+    static validatePassword(user, password) {
+        if (user === null) {
+            return Promise.reject('Invalid user!');
         }
 
-        return Promise.resolve(userToValidate);
+        // eslint-disable-next-line new-cap
+        if (user.password !== CryptoJS.SHA1(password).toString()) {
+            return Promise.reject('Invalid password!');
+        }
+
+        return Promise.resolve(user);
     }
 }
 

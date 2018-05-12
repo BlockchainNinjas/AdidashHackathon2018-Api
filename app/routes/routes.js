@@ -1,15 +1,12 @@
-/* globals __dirname */
-
-const fs = require('fs');
 const path = require('path');
+const fs = require('fs');
 
 const attachRoutes = (app, controllers) => {
     fs.readdirSync(__dirname)
-        .filter((fileName) => fileName.includes('.routes'))
-        .forEach((routeFile) => {
-            const routeModulePath = path.join(__dirname, routeFile);
-
-            require(routeModulePath)(app, controllers);
+        .filter((file) => file.includes('.routes'))
+        .forEach((fileName) => {
+            const currentPathFile = path.join(__dirname, fileName);
+            require(currentPathFile)(app, controllers);
         });
 };
 

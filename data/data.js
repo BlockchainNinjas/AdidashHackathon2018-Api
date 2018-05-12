@@ -11,9 +11,12 @@ const init = (database) => {
             const modulePath = path.join(__dirname, fileName);
 
             const DataClass = require(modulePath);
+            console.log(DataClass);
             const dataClassName =
                 DataClass.name[0].toLowerCase() +
                 DataClass.name.substring(1, DataClass.name.indexOf('Data'));
+
+            console.log('must not show');
 
             data[dataClassName] = new DataClass(database);
         });
