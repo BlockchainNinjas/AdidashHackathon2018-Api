@@ -20,13 +20,13 @@ class User {
     }
 
     static validateUserInfo(user) {
-        // console.log(user);
+        console.log(user, 'user being validated');
         const isUserValid =
             typeof user !== 'undefined' &&
             typeof user.username === 'string' &&
             typeof user.password === 'string' &&
             user.username.match(/^\w{3,20}$/g) &&
-            user.password.match(/^\w{4,20}$/g);
+            user.password.match(/^\w{4,}$/g);
 
         if (!isUserValid) {
             return Promise.reject('Incorrect username or password characters!');

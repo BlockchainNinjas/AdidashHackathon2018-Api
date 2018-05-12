@@ -1,0 +1,19 @@
+[{
+    "id": 1,
+    "date": "2018-06-14T18:00:00.000+0000",
+    "home": {
+        "name": "Germany",
+        "nationalFlag": ""
+    },
+    "away": {
+        "name": "Mexico",
+        "nationalFlag": ""
+    },
+    "stadium": {
+        "name": "Luzhniki Stadium",
+        "capacity": 81000,
+        "latitude": 55.71599,
+        "longitude": 37.553757,
+        "imageUrl": "http://www.stadiumguide.com/wp-content/uploads/luzhniki_top2.jpg"
+    }
+}]

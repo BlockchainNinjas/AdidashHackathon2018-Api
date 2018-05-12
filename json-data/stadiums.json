@@ -1,0 +1,73 @@
+[{
+    "name": "Luzhniki Stadium",
+    "capacity": 81000,
+    "latitude": 55.71599,
+    "longitude": 37.553757,
+    "imageUrl": "http://www.stadiumguide.com/wp-content/uploads/luzhniki_top2.jpg"
+}, {
+    "name": "Kaliningrad Stadium",
+    "capacity": 35212,
+    "latitude": 54.698055,
+    "longitude": 20.53389,
+    "imageUrl": "http://www.stadiumguide.com/wp-content/uploads/kaliningrad_top.jpg"
+}, {
+    "name": "Saint Petersburg Stadium",
+    "capacity": 67000,
+    "latitude": 59.972954,
+    "longitude": 30.220533,
+    "imageUrl": "http://www.stadiumguide.com/wp-content/uploads/stpetersburgnew_top.jpg"
+}, {
+    "name": "Nizhny Novgorod Stadium",
+    "capacity": 44899,
+    "latitude": 56.3375,
+    "longitude": 43.963333,
+    "imageUrl": "http://www.stadiumguide.com/wp-content/uploads/nizhny_top.jpg"
+}, {
+    "name": "Ekaterinburg Arena",
+    "capacity": 35696,
+    "latitude": 56.8325,
+    "longitude": 60.573612,
+    "imageUrl": "http://www.stadiumguide.com/wp-content/uploads/ekaterinburgarena_top1.jpg"
+}, {
+    "name": "Otkrytije Arena",
+    "capacity": 45360,
+    "latitude": 55.81786,
+    "longitude": 37.44025,
+    "imageUrl": "https://s.hs-data.com/bilder/stadien/detail/5214.jpg"
+}, {
+    "name": "Kazan Arena",
+    "capacity": 45379,
+    "latitude": 55.82038,
+    "longitude": 49.160645,
+    "imageUrl": "http://www.stadiumguide.com/wp-content/uploads/kazanarena_top.jpg"
+}, {
+    "name": "Mordovia Arena",
+    "capacity": 44442,
+    "latitude": 54.182777,
+    "longitude": 45.20139,
+    "imageUrl": "http://www.stadiumguide.com/wp-content/uploads/mordoviaarena_top.jpg"
+}, {
+    "name": "Samara Arena",
+    "capacity": 44918,
+    "latitude": 53.27778,
+    "longitude": 50.23722,
+    "imageUrl": "http://www.stadiumguide.com/wp-content/uploads/samaraarena_top.jpg"
+}, {
+    "name": "Volgograd Arena",
+    "capacity": 45568,
+    "latitude": 48.734444,
+    "longitude": 44.54861,
+    "imageUrl": "http://www.stadiumguide.com/wp-content/uploads/volgograd_top.jpg"
+}, {
+    "name": "Rostov Arena",
+    "capacity": 45000,
+    "latitude": 47.209442,
+    "longitude": 39.737778,
+    "imageUrl": "http://www.stadiumguide.com/wp-content/uploads/rostov_top.jpg"
+}, {
+    "name": "Fisht Stadium",
+    "capacity": 41220,
+    "latitude": 43.402267,
+    "longitude": 39.956112,
+    "imageUrl": "http://www.stadiumguide.com/wp-content/uploads/fisht_top1.jpg"
+}]

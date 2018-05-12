@@ -7,11 +7,19 @@ const initUtils = (app) => {
                 expiresIn: 202020202,
             });
         },
+        getDistanceFromLatLong(lat1, lon1, lat2, lon2) {
+            const p = 0.017453292519943295;
+            const c = Math.cos;
+            const a = 0.5 - c((lat2 - lat1) * p) / 2 +
+                c(lat1 * p) * c(lat2 * p) *
+                (1 - c((lon2 - lon1) * p)) / 2;
+
+            return 12742 * Math.asin(Math.sqrt(a));
+        },
+        isDateBetween(date, minDate, maxDate) {
+            return date >= minDate && date < maxDate;
+        }
     }
 };
 
 module.exports = initUtils;
-
-/*
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlBldGFyIiwicGFzc3dvcmQiOiJzb21lUGFzc3dvcmQiLCJpYXQiOjE1MDM2MTU0MTEsImV4cCI6MTUwMzYxNjg1MX0.dUJRX7cgiMX4hbUphW5kzkCtry9wUo04v7PRQpOPM5w
-*/
